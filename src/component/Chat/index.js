@@ -205,6 +205,7 @@ const ChatComponent = ({ blur, modal, calendarModal, chatModalState }) => {
 
 
                 <Box className='toggle-icons'>
+               
                     <Box className={classes.quickLinks1} onClick={handleChatOpen}>
                         <img src={messicon} className={classes.img} />
                     </Box>
@@ -212,7 +213,7 @@ const ChatComponent = ({ blur, modal, calendarModal, chatModalState }) => {
                     <DateRangeIcon className={classes.quickLinks} onClick={handleCalendarOpen} />
                     {/* <GiShoppingBag className={classes.quickLinks}  onClick={handleClickOpen}  /> */}
                     <Box className={classes.quickLinks} onClick={handleClickOpen}>
-                        <img src={Shopify} className={classes.img} />
+                        <img src={Shopify} className={classes.img2} />
                     </Box>
                 </Box>
 

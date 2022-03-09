@@ -5,7 +5,7 @@ import mediafriends from '../assets/mediafriends.svg'
 import { useStyles } from '../constant/customStyle'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import { categoryData } from '../constant/dropdown/category'
-
+import loca  from '../assets/loca.svg'
 const TabComponentConnect = () => {
     const classes = useStyles()
     const [value, setValue] = useState(1)
@@ -13,8 +13,17 @@ const TabComponentConnect = () => {
         setValue(event.target.value)
     }
     return (
+        <>
+        <Grid item xs={12} sm={12} lg={2} md={5}>
+      <Box style={{width:"100%",display:"flex"}}>
+                <Button className={classes.socialFriendButton}> <img src={mediafriends} alt=''className={classes.mediafriendsimg}  /></Button>
+                <Button className={classes.socialFriendButton}>   <img src={loca} alt=''className={classes.mediafriendsimg}   /></Button>
+                </Box>
+               </Grid>
         <Box className={classes.tabFeedBox}>
+            
             <Grid container spacing={2} className={classes.exploreSpaceSelect}>
+            
                 {/* <Grid item xs={12} sm={12} lg={3} md={3}>
                     <FormControl fullWidth className={classes.socialFriendDropdown}>
                         <Select value={value} onChange={handleChange} size='small' MenuProps={{ classes: { paper: classes.select } }} inputProps={{ classes: { icon: classes.icon } }} className={classes.root}>
@@ -26,10 +35,10 @@ const TabComponentConnect = () => {
                         </Select>
                     </FormControl>
                 </Grid> */}
-                <Grid item xs={12} sm={12} lg={1} md={5}>
+                {/* <Grid item xs={12} sm={12} lg={1} md={5}>
                    
                     <img src={mediafriends} alt='' className={classes.mediafriendsimg} />
-                </Grid>
+                </Grid> */}
                 {/* <Grid item xs={12} sm={12} lg={5} md={5}>
                     <Button variant="contained" fullWidth className={classes.socialFriendButton}>
                     <img src={mediafriends} alt='' className={classes.mediafriendsimg} />Find social media friends</Button>
@@ -53,6 +62,7 @@ const TabComponentConnect = () => {
                 ))}
             </Box>
         </Box>
+        </>
     )
 }
 

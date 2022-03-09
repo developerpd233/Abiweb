@@ -381,9 +381,9 @@ export const useStyles = makeStyles({
         cursor: 'pointer !important'
     },
     accessimg: {
-        width: '13px',
+        width: '16px',
         textAlign: 'left',
-        margin: ' 2px 10px',
+        margin: ' 7px 10px',
     },
     avatarTitle: {
         marginTop: '5px !important',
@@ -530,15 +530,23 @@ export const useStyles = makeStyles({
         paddingLeft: '10px'
     },
     img: {
-        width: '100%'
+        width: '100%',
+        padding: "0px 2px 0 4px",
     },
+    img2: {
+        width: '100%',
+    },
+
     imghead: {
         color: '#FF1C51',
-        fontSize: '35px !important'
+        fontSize: '33px !important'
     },
     imghead2: {
         width: "80%",
 
+    },
+    imghead3: {
+        width: "92%",
     },
     imgjanes: {
         width: "145px !important"
@@ -869,32 +877,36 @@ export const useStyles = makeStyles({
         fontFamily: 'inter !important',
         color: '#fff !important',
     },
-    inpu: {
-        width: "50% !important",
-        background: "red !important"
-    },
+    // inpu: {
+    //     width: "50% !important",
+    //     background: "red !important"
+    // },
     playListButtonSubscribe: {
 
-        borderRadius: '14px !important',
+        borderRadius: '52px !important',
         color: '#fff !important',
         fontSize: '10px !important',
         padding: '0px 15px !important',
         textTransform: 'none !important',
         marginBottom: '17px !important',
         fontWeight: '500 !important',
-        background: '#FF1C51 !important',
-        maxWidth: "40px !important",
-        maxHeight: "40px !important"
+        // background: '#FF1C51 !important',
+        width: "32px !important",
+        height: "60px !important",
+        margin: "-50px 0 0 -76px !important"
     },
     playListButton: {
-        border: '1px solid #fff !important',
-        borderRadius: '14px !important',
+        width: "32px !important",
+        height: "60px !important",
+        borderRadius: '52px !important',
         color: '#fff !important',
         fontSize: '14px !important',
         padding: '0px 15px !important',
         textTransform: 'none !important',
         marginBottom: '17px !important',
-        fontWeight: '500 !important'
+        fontWeight: '500 !important',
+        margin: "-8px 0 0 -72px !important"
+        // border:"1px solid #ffff !important"
     },
     rightFlex: {
         alignItems: 'center',
@@ -949,7 +961,11 @@ export const useStyles = makeStyles({
         marginBottom: '81px'
     },
     mediafriendsimg: {
-        margin: '5px 7px',
+        margin: "-1px 0 0 0",
+        width: "40%"
+    },
+    mediafriendsimg2: {
+       
     },
     feedbackSocial: {
         display: 'flex !important',
@@ -985,7 +1001,8 @@ export const useStyles = makeStyles({
         fontFamily: 'inter !important',
         fontSize: '16px !important',
         textTransform: 'none !important',
-        boxShadow: 'none !important'
+        boxShadow: 'none !important',
+        margin:"5px !important"
     },
     socialFriendDropdown: {
         outline: '0 !important',
@@ -1151,7 +1168,9 @@ export const useStyles = makeStyles({
         fontSize: "22px !important",
         marginTop: "10px !important",
         border: "1px solid red ",
-        borderRadius: "25px !important"
+        borderRadius: "25px !important",
+        marginBottom: "13px !important",
+        top: "-13px",
     },
     expand2: {
         color: "red !important",
@@ -1161,7 +1180,9 @@ export const useStyles = makeStyles({
         fontSize: "22px !important",
         marginTop: "10px !important",
         border: "1px solid red ",
-        borderRadius: "25px !important"
+        borderRadius: "25px !important",
+        marginBottom: "13px !important",
+        top: "-13px",
     },
     sli: {
         width: "100% !important"
@@ -1183,7 +1204,7 @@ export const useStyles = makeStyles({
         border: 0,
         color: 'white',
         // height: "100%",
-        padding: '0 14px',
+        padding: '11px 14px',
         borderRadius: "17px",
         marginBottom: "12px !important",
         zIndex: 999,
@@ -1233,6 +1254,7 @@ export const useStyles = makeStyles({
         },
     },
     cutomSlider2: {
+        marginTop: "-27px !important",
         marginLeft: "30px !important",
         height: "1px !important",
         color: "#FF1C51 !important",
@@ -1241,6 +1263,7 @@ export const useStyles = makeStyles({
             height: '10px'
         },
     },
+   
     plapuse: {
         cursor: 'pointer',
         width: '30px',
@@ -1263,7 +1286,7 @@ export const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        margin: '-10px 0 0 0',
+        margin: '-27px 0 0 0',
 
 
 
@@ -1724,5 +1747,32 @@ export const useStyles = makeStyles({
             background: "#dc2751 !important",
 
         }
+    },
+    Select:{
+        background: 'transparent',
+        border: '0px solid red !important',
+        borderRadius: '10px !important',
+        color: '#fff !important',
+        fontSize: "20px !important",
+        fontWeight: '500 !important',
+        padding: '0px 5px',
+        fontFamily: 'inter',
+        "&:hover": {
+            "&& fieldset": {
+                borderBottom: "1px solid rgb(233 20 20 / 42%)",
+                padding: '0px 5px',
+            },
+            "MuiSelect-select": {
+                height: "auto",
+                minHeight: "1.4375em",
+                textOverflow:"ellipsis",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                borderBottom: "1px solid",
+            }
+            
+        },
+
     }
+
 })

@@ -66,7 +66,9 @@ const ExplorerScreen = () => {
         setModalOpen(true)
         setOpen(true)
     }
-
+    // const handleClose = () => {
+    //     setOpen(false);
+    //   };
     const handleModalClose = () => {
         setModalOpen(false)
         setOpen(false)
@@ -96,7 +98,7 @@ const ExplorerScreen = () => {
             <Container maxWidth="lg" className={classes.exploreContainer} sx={{ marginBottom: '150px' }} >
             <Grid container spacing={2} className={classes.exploreSpaceSelect}>
                         <Grid item xs={12} sm={12} lg={10} md={10}>
-                            <FormControl variant="standard" fullWidth>
+                            <FormControl variant="standard" fullWidth >
                                 <Select
                                     sx={{ fontFamily: 'inter', fontSize: '20px' }}
                                     inputProps={{ classes: { icon: classes.icon } }}
@@ -104,23 +106,8 @@ const ExplorerScreen = () => {
                                     id="demo-simple-select-standard"
                                     value={value}
                                     onChange={handleChange}
-                                    className='steper-select'
-                                    sx={{
-                                        background: 'transparent',
-                                        border: '0px solid transparent !important',
-                                        borderRadius: '10px !important',
-                                        color: '#fff !important',
-                                        fontSize: "20px !important",
-                                        fontWeight: '500 !important',
-                                        padding: '0px 5px',
-                                        fontFamily: 'inter',
-                                        "&:hover": {
-                                            "&& fieldset": {
-                                                border: "0px solid transparent",
-                                                padding: '0px 5px',
-                                            }
-                                        },
-                                    }}
+                                    className={classes.Select}
+                                  
                                     MenuProps={{ classes: { paper: classes.select }, }}
                                 >
                                     <MenuItem value={"choose"} disabled>Choose Media Type</MenuItem>
@@ -469,10 +456,12 @@ const ExplorerScreen = () => {
                                             <Typography className={classes.playListDetails}>S03 e05</Typography>
                                         </Box>
                                         <Box className={[classes.playListFlex, classes.rightFlex]}>
-                                            <Button variant="outlined"  className={classes.playListButtonSubscribe}>
-                                            <img src={Accessicon} alt='' className={classes.accessimg} /></Button>
-                                            <Button variant="outlined"  className={classes.playListButton}>
-                                            <img src={wishlisticon} alt='' className={classes.accessimg} /> </Button>
+                                            <Button variant="standard"  className={classes.playListButtonSubscribe}>
+                                            <Box sx={{width:"36px",height:"36px",border:"1px solid #fff",borderRadius:"25px",backgroundColor:"#FF1C51",margin:"15px 0px 0px 0px" }}>
+                                            <img src={Accessicon} alt='' className={classes.accessimg} /></Box></Button>
+                                            <Button variant="standard"  className={classes.playListButton}>
+                                                <Box sx={{width:"36px",height:"36px",border:"1px solid #fff" ,borderRadius:"25px"}}>
+                                            <img src={wishlisticon} alt='' className={classes.accessimg} /></Box> </Button>
                                             <Box className={classes.playListUser}>
                                                 <Box sx={{ width: '33px', marginRight: '8.5px' }}>
                                                     <img src={Profile} alt='' className={classes.img} />
@@ -506,9 +495,14 @@ const ExplorerScreen = () => {
                                     <Slider aria-label="video" value={valueSlider} sx={{ width: '60%' }} className={classes.removeThumb} />
                                 </Box>
                             </Box>
+                            <CloseIcon onClick={handleModalClose} sx={{cursor:"pointer", fontSize: '24px', fontWeight: '600', fontFamily: 'inter', color: '#fff',position:"absolute",top:"3px",right:"14px" }}/>
                             <Box sx={{ marginLeft: '42px', display: 'flex', flexDirection: 'column' }}>
+                            
                                 <Box sx={{ marginBottom: '10px' }}>
-                                    <Typography sx={{ fontSize: '24px', fontWeight: '600', fontFamily: 'inter', color: '#fff' }}>Mountain Landscape</Typography>
+                                    <Typography  sx={{ fontSize: '24px', fontWeight: '600', fontFamily: 'inter', color: '#fff' }}>Mountain Landscape</Typography>
+                               
+                                    
+                               
                                 </Box>
                                 <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '7px' }}>
                                     <Typography sx={{ fontSize: '20px', fontFamily: 'inter', color: '#fff' }}>Author</Typography>

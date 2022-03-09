@@ -24,6 +24,7 @@ import { HiOutlineDotsVertical } from "react-icons/hi";
 import Store from '../../assets/store.svg'
 import User from '../../assets/user.svg'
 
+
 const pages = [
     {
         id: 1,
@@ -276,11 +277,11 @@ const Header = ({ blur }) => {
                         </IconButton>
                         <IconButton size="large" edge="end" aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" onClick={handleMenu} color="inherit" >
                             <Box sx={{ width: '31px', height: '31px' }}>
-                                <img src={User} alt={''} className={classes.imghead2}  />
+                                <img src={User} alt={''} className={classes.imghead3}  />
                             </Box>
                         </IconButton>
                         <IconButton sx={{marginLeft:'15px'}} size="large" edge="end" aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" onClick={toggleDrawer('right', true)} color="inherit" >
-                            <MenuIcon sx={{ fontSize: '35px', color: '#707070',margin:"0 0 -14px 0" }} />
+                            <MenuIcon sx={{ fontSize: '35px', color: '#707070',margin:"0 0 -6px 0" }} />
                         </IconButton>
                         <Menu className={classes.menu} id="menu-appbar" anchorEl={anchorEl} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} keepMounted transformOrigin={{ vertical: 'top', horizontal: 'right', }} open={Boolean(anchorEl)} onClose={handleMenuClose}>
                             <MenuItem onClick={handleProfileRoute}>Profile</MenuItem>

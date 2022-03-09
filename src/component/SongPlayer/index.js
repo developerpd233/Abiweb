@@ -353,7 +353,7 @@ export default function SongPlayer({ blur }) {
                                             border: '0px solid transparent !important',
                                             borderRadius: '10px !important',
                                             color: '#fff !important',
-                                            fontSize: "20px !important",
+                                            fontSize: "15px !important",
                                             fontWeight: '500 !important',
                                             padding: '0px 5px',
                                             fontFamily: 'poppins',

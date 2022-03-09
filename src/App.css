@@ -52,7 +52,7 @@ fieldset {
 }
 
 .steper-select .MuiSelect-select::before {
-  border-bottom: 1px solid green !important;
+  border-bottom: 1px solid rgb(128, 0, 0) !important;
 }
 
 .steper-label label {
@@ -90,7 +90,7 @@ fieldset {
 .css-jsexje-MuiSwitch-thumb {
   position: absolute;
   top: 2px;
-  left: 7px;
+  left: 2px;
 }
 /* fixed Icons Style */
 .fixed-icons-show {
@@ -216,7 +216,7 @@ fieldset {
   color: rgb(255, 255, 255);
   transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
-.css-1xl51qm-MuiInputBase-root {
+/* .css-1xl51qm-MuiInputBase-root {
   border-bottom: 1px solid red !important;
   color: #fff;
   position: relative;
@@ -230,4 +230,12 @@ fieldset {
   right: 34px !important;
   border-radius:0px !important ;
 
+} */
+.MuiSelect-select {
+  height: auto;
+  min-height: 1.4375em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  border-bottom: 1px solid #FF1C51 !important;
 }
