@@ -7,6 +7,8 @@ import profile from '../assets/profile.png'
 import Group from "../assets//Group 65.png"
 import MoreVertIcon from '@mui/icons-material/MoreVert'
 import FavoriteIcon from '@mui/icons-material/Favorite'
+import TextField from "@material-ui/core/TextField";
+
 
 const TabComponentMedia = () => {
     const [value, setValue] = useState("choose")
@@ -22,46 +24,49 @@ const TabComponentMedia = () => {
                     <Typography sx={{ fontFamily: 'poppins', fontSize: '20px', fontWeight: '600', marginRight: '10px', marginRight: '10px' }}>Jane's Media</Typography>
                 </Box>
                 <Box display={'flex'} justifyContent={'flex-end'} sx={{ paddingBottom: '5.5px', width: '50%', marginBottom: '13px', display: 'flex', justifyContent: 'flex-end' }}>
-                    <FormControl variant="standard" fullWidth sx={{ width: '150px' }}>
-                        <Select
-                            sx={{ fontFamily: 'poppins', fontSize: '20px' }}
-                            inputProps={{ classes: { icon: classes.icon } }}
-                            labelId="demo-simple-select-standard-label"
-                            id="demo-simple-select-standard"
-                            value={value}
-                            onChange={handleChange}
-                            className='steper-select'
-                            sx={{
 
-                                background: 'transparent',
-                                border: '0px solid transparent !important',
-                                borderRadius: '10px !important',
-                                color: '#fff !important',
-                                fontSize: "15px !important",
-                                fontWeight: '500 !important',
-                                padding: '0px 5px',
-                                fontFamily: 'poppins',
-                                "&:hover": {
-                                    "&& fieldset": {
-                                        border: "0px solid transparent",
-                                        padding: '0px 5px',
-                                    }
-                                },
-                            }}
-                            MenuProps={{ classes: { paper: classes.select }, }}
-                        >
-                            <MenuItem value={"choose"} disabled >Choose Media</MenuItem>
-                            {mediaData.map((data, index) => {
-                                return (
-                                    <MenuItem value={data.value} key={index++}>{data.name}</MenuItem>
-                                )
-                            })}
-                        </Select>
-                    </FormControl>
+                 
+                   
+
+                    <FormControl variant="standard" sx={{width:"50%",borderBottom:"2px solid #FF1C51 !important",margin:"2px 0px 0px 0"}} >
+                                        <Select
+                                          
+                                            inputProps={{ classes: { icon: classes.icon } }}
+                                            labelId="demo-simple-select-standard-label"
+                                            id="demo-simple-select-standard"
+                                            value={value}
+                                            onChange={handleChange}
+                                            className={`${classes.steperSelect} ${classes.slect}`}
+                                            // sx={{
+                                            //     background: 'transparent',
+                                            //     border: '0px solid transparent !important',
+                                            //     borderRadius: '10px !important',
+                                            //     color: '#fff !important',
+                                            //     fontSize: "20px !important",
+                                            //     fontWeight: '500 !important',
+                                            //     padding: '0px 5px',
+                                            //     fontFamily: 'poppins',
+                                            //     "&:hover": {
+                                            //         "&& fieldset": {
+                                            //             border: "0px solid transparent",
+                                            //             padding: '0px 5px',
+                                            //         }
+                                            //     },
+                                            // }}
+                                            MenuProps={{ classes: { paper: classes.select }, }}
+                                        >
+                                            <MenuItem value={"choose"} disabled>Choose Media</MenuItem>
+                                            {mediaData.map((data, index) => {
+                                                return (
+                                                    <MenuItem value={data.value} key={index++}>{data.name}</MenuItem>
+                                                )
+                                            })}
+                                        </Select>
+                                    </FormControl>
                 </Box>
             </Box>
-            <Box className='' sx={{padding:'0px 5px'}}>
-                <Box className={`grid-media-scroll ${classes.profileGrid}`} sx={{padding:'0px 15px',maxHeight:'800px',overflowY:'auto'}}>
+            <Box className='' sx={{ padding: '0px 5px' }}>
+                <Box className={`grid-media-scroll ${classes.profileGrid}`} sx={{ padding: '0px 15px', maxHeight: '800px', overflowY: 'auto' }}>
                     {Array.from({ length: 12 }).map((item, index) => (
                         <Box className={classes.profileGrid25}>
                             <Box className={classes.topImages}>

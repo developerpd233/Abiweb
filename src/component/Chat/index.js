@@ -195,7 +195,7 @@ const ChatComponent = ({ blur, modal, calendarModal, chatModalState }) => {
 
     return (
         <>
-            <Box className='Arrow-icon-box' onClick={() => setShowIcons(!showIcons)}>
+            <Box className={`Arrow-icon-box ${showIcons?'Arrow-icon-box-show':'Arrow-icon-box-hide'}`} onClick={() => setShowIcons(!showIcons)}>
                 <ArrowCircleUpIcon className={`show-arrow ${showIcons ? "show-arrow-rotate" : null}`}  />
             </Box>
 
@@ -204,7 +204,7 @@ const ChatComponent = ({ blur, modal, calendarModal, chatModalState }) => {
             <Box className={showIcons ? 'fixed-icons-show' : "fixed-icons-hide"} style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
 
 
-                <Box className='toggle-icons'>
+                <Box className='toggle-icons-hide'>
                
                     <Box className={classes.quickLinks1} onClick={handleChatOpen}>
                         <img src={messicon} className={classes.img} />
@@ -220,8 +220,9 @@ const ChatComponent = ({ blur, modal, calendarModal, chatModalState }) => {
 
             </Box>
 
-
+            
             <Dialog className='header-scroll' classes={{ paper: classes.paper }} open={open} onClose={handleClose} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description" fullWidth PaperProps={{ style: { borderRadius: 20, backgroundColor: '#1D1D1D', border: '3px solid #434343;', maxWidth: 870 } }}>
+            <CloseIcon onClick={handleClose} sx={{cursor:"pointer", fontSize: '24px', fontWeight: '600', fontFamily: 'inter', color: '#fff',position:"absolute",top: "10px",right:"17px",zIndex:" 999999" }}/>
                 <DialogContent>
                     <CustomTabsComponent tabs={tabs} tabsPanel={tabsPanel} />
                 </DialogContent>
@@ -229,8 +230,9 @@ const ChatComponent = ({ blur, modal, calendarModal, chatModalState }) => {
                     <CloseIcon fontSize={'large'} />
                 </IconButton>
             </Dialog>
-
+           
             <Dialog classes={{ paper: classes.paper }} open={calendarOpen} onClose={handleCalendarClose} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description" fullWidth PaperProps={{ style: { borderRadius: '24px', backgroundColor: '#434343', maxWidth: 870 } }}>
+            <CloseIcon onClick={handleCalendarClose} sx={{cursor:"pointer", fontSize: '24px', fontWeight: '600', fontFamily: 'inter', color: '#fff',position:"absolute",top: "10px",right:"17px",zIndex:" 999999" }}/>
                 <DialogContent sx={{ padding: 0, borderRadius: '24px', border: '3px solid #434343' }}>
                     <Box>
                         <CalendarComponent />
@@ -242,6 +244,7 @@ const ChatComponent = ({ blur, modal, calendarModal, chatModalState }) => {
             </Dialog>
 
             <Dialog className='header-scroll' classes={{ paper: [classes.paper1] }} open={chatOpen} maxWidth={'lg'} onClose={handleChatClose} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description" fullWidth PaperProps={{ style: { borderRadius: 20, backgroundColor: '#1D1D1D', border: '3px solid #434343;' } }}>
+            <CloseIcon onClick={handleChatClose} sx={{cursor:"pointer", fontSize: '20px', fontWeight: '600', fontFamily: 'inter', color: '#fff',position:"absolute",top: "3px",right:"8px",zIndex:" 999999" }}/>
                 <DialogContent className={classes.removePaddingChat}>
                     <Box className={classes.leftChat}>
                         <Box sx={{ padding: '10px 10px' }}>

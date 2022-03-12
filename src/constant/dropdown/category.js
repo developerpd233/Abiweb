@@ -59,7 +59,7 @@ export const mediaData = [
 export const sortingData = [
     {
         value: 1,
-        name: 'List-Relevance'
+        name: 'Relevance'
     },
     {
         value: 2,
@@ -67,7 +67,7 @@ export const sortingData = [
     },
     {
         value: 3,
-        name: 'Alphabetical Order'
+        name: 'A-Z Order'
     }
 
 ]

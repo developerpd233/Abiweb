@@ -531,7 +531,11 @@ export const useStyles = makeStyles({
     },
     img: {
         width: '100%',
-        padding: "0px 2px 0 4px",
+        // padding: "0px 2px 0 4px",
+    },
+    imgex: {
+        width: '90%',
+        // padding: "0px 2px 0 4px",
     },
     img2: {
         width: '100%',
@@ -549,7 +553,7 @@ export const useStyles = makeStyles({
         width: "92%",
     },
     imgjanes: {
-        width: "145px !important"
+        width: "135px !important"
     },
     mediatype: {
         fontSize: '15px !important',
@@ -762,7 +766,7 @@ export const useStyles = makeStyles({
         backgroundColor: "red !important"
     },
     quickLinks1: {
-        padding: '13px 20px !important',
+        padding: '13px 18px !important',
         fontSize: '26px !important',
         color: "#fff !important",
         backgroundColor: "#FF1C51 !important",
@@ -780,7 +784,7 @@ export const useStyles = makeStyles({
         color: "#fff !important",
         backgroundColor: "#FF1C51 !important",
         borderRadius: '100% !important',
-        padding: '12px 18px !important',
+        padding: '6px 16px !important',
         margin: '0 0 30px !important',
         cursor: "pointer !important",
         width: '60px !important',
@@ -962,7 +966,7 @@ export const useStyles = makeStyles({
     },
     mediafriendsimg: {
         margin: "-1px 0 0 0",
-        width: "40%"
+        width: "20px"
     },
     mediafriendsimg2: {
        
@@ -982,8 +986,8 @@ export const useStyles = makeStyles({
         fontSize: "26px !important"
     },
     imgex: {
-        width: "100% !important",
-        height: "270px !importan",
+        width: "90% !important",
+        // height: "270px !importan",
     },
     feedbackText: {
         fontSize: '20px !important',
@@ -1254,8 +1258,8 @@ export const useStyles = makeStyles({
         },
     },
     cutomSlider2: {
-        marginTop: "-27px !important",
-        marginLeft: "30px !important",
+        marginTop: "-42px !important",
+        marginLeft: "9px !important",
         height: "1px !important",
         color: "#FF1C51 !important",
         '& .MuiSlider-thumb': {
@@ -1286,7 +1290,7 @@ export const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        margin: '-27px 0 0 0',
+        margin: '-36px 0 0 0',
 
 
 
@@ -1773,6 +1777,28 @@ export const useStyles = makeStyles({
             
         },
 
-    }
-
+    },
+    slect:{
+        background: 'transparent',
+        border: '0px solid transparent !important',
+        borderRadius: '10px !important',
+        color: '#fff !important',
+        fontSize: "17px !important",
+        fontWeight: '500 !important',
+        padding: '0px 5px',
+        fontFamily: 'poppins !important',
+        "&:hover": {
+            "&& fieldset": {
+                border: "0px solid transparent",
+                padding: '0px 5px',
+            }
+        },
+    },
+   
+    steperSelect:{
+    "&:after":{
+        display: "none !important",
+      },
+      
+}
 })

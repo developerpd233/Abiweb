@@ -14,7 +14,6 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "antd": "^4.18.3",
     "emoji-picker-react": "^3.5.0",
     "material-ui-audio-player": "^1.7.1",
     "moment": "^2.29.1",

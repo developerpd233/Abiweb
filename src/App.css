@@ -95,7 +95,7 @@ fieldset {
 /* fixed Icons Style */
 .fixed-icons-show {
   position: relative;
-  left: 90px;
+  left: 75px;
   transition: ease 1s;
 }
 
@@ -105,22 +105,26 @@ fieldset {
   left: -90px;
   transition: ease 1s;
 }
-
 .Arrow-icon-box {
   display: flex;
   /* background: #FF1C51; */
   position: absolute;
-  top: 96px;
+  top: -46px;
   height: 40px;
   width: 39px;
-  left: 5px;
- 
   align-items: center;
   justify-content: center;
   border-radius: 30px;
   cursor: pointer;
 }
-
+.Arrow-icon-box-hide {
+  left: 5px;
+  transition: ease 1s;
+}
+.Arrow-icon-box-show {
+  left: 81px;
+  transition: ease 1s;
+}
 .show-arrow {
   color: #e80f0f  !important;
   width: 50px !important;
@@ -133,12 +137,15 @@ fieldset {
   transition: ease 1s !important;
   z-index: 1;
   transform: rotate(89deg);
-  margin-left: 12px !important;
+  /* margin-left: 134px !important;
+  margin-top: 109px !important; */
   /* border: 1px solid #FF1C51 ; */
+  
 }
 
 .show-arrow-rotate {
   transform: rotate(275deg);
+ 
 
 }
 /* media scroll bar style */
@@ -231,11 +238,74 @@ fieldset {
   border-radius:0px !important ;
 
 } */
-.MuiSelect-select {
+/* .MuiSelect-select {
   height: auto;
   min-height: 1.4375em;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   border-bottom: 1px solid #FF1C51 !important;
+} */
+.toggle-icons-hide{
+  margin: -148px 7px 16px -63px !important;
+}
+/* .select-dropdown,
+.select-dropdown * {
+margin: 0;
+padding: 0;
+position: relative;
+box-sizing: border-box;
+border: none;
+background-color: #363636;
+}
+.select-dropdown {
+position: relative;
+background-color: #080808;
+border-radius: 4px;
+}
+
+.select-dropdown select {
+font-size: 1rem;
+font-weight: normal;
+max-width: 100%;
+padding: 8px 24px 8px 10px;
+border: none;
+background-color: #363636;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+border-bottom: 1px solid #FF1C51
+}
+.select-dropdown select:active, .select-dropdown select:focus {
+outline: none;
+box-shadow: none;
+background-color: #363636;
+}
+.select-dropdown:after {
+content: "";
+position: absolute;
+top: 50%;
+right: 8px;
+width: 0;
+height: 0;
+margin-top: -2px;
+
+border-top: 5px solid #aaa;
+border-right: 5px solid transparent;
+border-left: 5px solid transparent; */
+/* .css-17mydh2-MuiInputBase-root-MuiInput-root:after{
+  border-bottom: 2px solid #FF1C51 !important;
+} */
+/* .MuiSelect-standard{
+  border-bottom: 2px solid #FF1C51 !important;
+}
+
+.MuiSelect-standard:hover{
+  border-bottom: 2px solid #FF1C51 !important;
+} */
+/* .MuiInputBase{
+  border-bottom: 2px solid #1cff1c !important;
+} */
+.MuiSelect-select::before {
+  border-bottom: 1px solid #2a9061 !important;
 }

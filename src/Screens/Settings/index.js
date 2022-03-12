@@ -167,7 +167,7 @@ const SettingScreen = () => {
 
                             <Box sx={{ display: 'flex', justifyContent: 'space-between', marginBottom: '19px' }}>
                                 <Box sx={{ width: '50%' }}>
-                                    <InputLabel htmlFor="idGender" className={classes.settingLabel}>Phone: </InputLabel>
+                                    <InputLabel htmlFor="idGender" className={classes.settingLabel}>Phone:</InputLabel>
                                 </Box>
                                 <SettingsInput size={'medium'} sx={{ width: '50%',  }} />
                             </Box>
@@ -199,32 +199,33 @@ const SettingScreen = () => {
                                         <Box sx={{ marginRight: '10px' }}>
                                             <InputLabel htmlFor="idGender" className={classes.settingLabel}>Online Status : </InputLabel>
                                         </Box>
-                                        <FormControl variant="standard" fullWidth sx={{ width: '136px' }}>
+                                        <FormControl variant="standard" fullWidth sx={{ width: '136px', borderBottom:"2px solid #FF1C51 !important" }}>
                                             <Select
-                                                sx={{ fontFamily: 'poppins', fontSize: '20px' }}
+                                             className={`${classes.steperSelect} ${classes.slect}`}
+                                                // sx={{ fontFamily: 'poppins', fontSize: '20px' }}
                                                 inputProps={{ classes: { icon: classes.icon } }}
                                                 labelId="demo-simple-select-standard-label"
                                                 id="demo-simple-select-standard"
                                                 value={value}
                                                 onChange={handleChange}
-                                                className='steper-select'
-                                                sx={{
+                                                // className='steper-select'
+                                                // sx={{
 
-                                                    background: 'transparent',
-                                                    border: '0px solid transparent !important',
-                                                    borderRadius: '10px !important',
-                                                    color: '#fff !important',
-                                                    fontSize: "20px !important",
-                                                    fontWeight: '500 !important',
-                                                    padding: '0px 5px',
-                                                    fontFamily: 'poppins',
-                                                    "&:hover": {
-                                                        "&& fieldset": {
-                                                            border: "0px solid transparent",
-                                                            padding: '0px 5px',
-                                                        }
-                                                    },
-                                                }}
+                                                //     background: 'transparent',
+                                                //     border: '0px solid transparent !important',
+                                                //     borderRadius: '10px !important',
+                                                //     color: '#fff !important',
+                                                //     fontSize: "20px !important",
+                                                //     fontWeight: '500 !important',
+                                                //     padding: '0px 5px',
+                                                //     fontFamily: 'poppins',
+                                                //     "&:hover": {
+                                                //         "&& fieldset": {
+                                                //             border: "0px solid transparent",
+                                                //             padding: '0px 5px',
+                                                //         }
+                                                //     },
+                                                // }}
                                                 MenuProps={{ classes: { paper: classes.select }, }}
                                             >
 
@@ -320,32 +321,32 @@ const SettingScreen = () => {
                             <Box sx={{ width: '50%' }}>
                                 <Box sx={{ display: 'flex', justifyContent: 'space-between', marginBottom: '18px', alignItems: 'center' }}>
                                     <Typography sx={{ fontSize: '20px', color: '#fff' }}>Who can see your post? :</Typography>
-                                    <FormControl variant="standard" fullWidth sx={{ width: '136px' }}>
+                                    <FormControl variant="standard" fullWidth sx={{ width: '136px' ,borderBottom:"2px solid #FF1C51 !important" }}>
                                         <Select
-                                            sx={{ fontFamily: 'poppins', fontSize: '20px' }}
+                                            // sx={{ fontFamily: 'poppins', fontSize: '20px' }}
                                             inputProps={{ classes: { icon: classes.icon } }}
                                             labelId="demo-simple-select-standard-label"
                                             id="demo-simple-select-standard"
                                             value={postValue}
-                                            onChange={handleChange}
-                                            className='steper-select'
-                                            sx={{
+                                            onChange={handlePostChange}
+                                            className={`${classes.steperSelect} ${classes.slect}`}
+                                            // sx={{
 
-                                                background: 'transparent',
-                                                border: '0px solid transparent !important',
-                                                borderRadius: '10px !important',
-                                                color: '#fff !important',
-                                                fontSize: "20px !important",
-                                                fontWeight: '500 !important',
-                                                padding: '0px 5px',
-                                                fontFamily: 'poppins',
-                                                "&:hover": {
-                                                    "&& fieldset": {
-                                                        border: "0px solid transparent",
-                                                        padding: '0px 5px',
-                                                    }
-                                                },
-                                            }}
+                                            //     background: 'transparent',
+                                            //     border: '0px solid transparent !important',
+                                            //     borderRadius: '10px !important',
+                                            //     color: '#fff !important',
+                                            //     fontSize: "20px !important",
+                                            //     fontWeight: '500 !important',
+                                            //     padding: '0px 5px',
+                                            //     fontFamily: 'poppins',
+                                            //     "&:hover": {
+                                            //         "&& fieldset": {
+                                            //             border: "0px solid transparent",
+                                            //             padding: '0px 5px',
+                                            //         }
+                                            //     },
+                                            // }}
                                             MenuProps={{ classes: { paper: classes.select }, }}
                                         >
 
@@ -359,34 +360,35 @@ const SettingScreen = () => {
                                 </Box>
                                 <Box sx={{ display: 'flex', justifyContent: 'space-between', marginBottom: '18px', alignItems: 'center' }}>
                                     <Typography sx={{ fontSize: '20px', color: '#fff' }}>Who can see your media? :</Typography>
-                                    <FormControl variant="standard" fullWidth sx={{ width: '136px' }}>
+                                    <FormControl variant="standard" fullWidth sx={{ width: '136px',borderBottom:"1px solid #FF1C51 !important" }}>
                                         <Select
-                                            sx={{ fontFamily: 'poppins', fontSize: '20px' }}
+                                            // sx={{ fontFamily: 'poppins', fontSize: '20px' }}
                                             inputProps={{ classes: { icon: classes.icon } }}
                                             labelId="demo-simple-select-standard-label"
                                             id="demo-simple-select-standard"
                                             value={mediaValue}
-                                            onChange={handleChange}
-                                            className='steper-select'
-                                            sx={{
+                                            onChange={handleMediaChange}
+                                            className={`${classes.steperSelect} ${classes.slect}`}
+                                            // sx={{
 
-                                                background: 'transparent',
-                                                border: '0px solid transparent !important',
-                                                borderRadius: '10px !important',
-                                                color: '#fff !important',
-                                                fontSize: "20px !important",
-                                                fontWeight: '500 !important',
-                                                padding: '0px 5px',
-                                                fontFamily: 'poppins',
-                                                "&:hover": {
-                                                    "&& fieldset": {
-                                                        border: "0px solid transparent",
-                                                        padding: '0px 5px',
-                                                    }
-                                                },
-                                            }}
+                                            //     background: 'transparent',
+                                            //     border: '0px solid transparent !important',
+                                            //     borderRadius: '10px !important',
+                                            //     color: '#fff !important',
+                                            //     fontSize: "20px !important",
+                                            //     fontWeight: '500 !important',
+                                            //     padding: '0px 5px',
+                                            //     fontFamily: 'poppins',
+                                            //     "&:hover": {
+                                            //         "&& fieldset": {
+                                            //             border: "0px solid transparent",
+                                            //             padding: '0px 5px',
+                                            //         }
+                                            //     },
+                                            // }}
                                             MenuProps={{ classes: { paper: classes.select }, }}
                                         >
+                                            <MenuItem value={"choose"} disabled>Choose Media</MenuItem>
 
                                             {categoryData1.map((data, index) => {
                                                 return (
@@ -398,32 +400,32 @@ const SettingScreen = () => {
                                 </Box>
                                 <Box sx={{ display: 'flex', justifyContent: 'space-between', marginBottom: '18px', alignItems: 'center' }}>
                                     <Typography sx={{ fontSize: '20px', color: '#fff' }}>Who can see your friends list? :</Typography>
-                                    <FormControl variant="standard" fullWidth sx={{ width: '136px' }}>
+                                    <FormControl variant="standard" fullWidth sx={{ width: '136px',borderBottom:"1px solid #FF1C51 !important" }}>
                                         <Select
-                                            sx={{ fontFamily: 'poppins', fontSize: '20px' }}
+                                            // sx={{ fontFamily: 'poppins', fontSize: '20px' }}
                                             inputProps={{ classes: { icon: classes.icon } }}
                                             labelId="demo-simple-select-standard-label"
                                             id="demo-simple-select-standard"
                                             value={friendListValue}
-                                            onChange={handleChange}
-                                            className='steper-select'
-                                            sx={{
+                                            onChange={handleFriendListChange}
+                                            className={`${classes.steperSelect} ${classes.slect}`}
+                                            // sx={{
 
-                                                background: 'transparent',
-                                                border: '0px solid transparent !important',
-                                                borderRadius: '10px !important',
-                                                color: '#fff !important',
-                                                fontSize: "20px !important",
-                                                fontWeight: '500 !important',
-                                                padding: '0px 5px',
-                                                fontFamily: 'poppins',
-                                                "&:hover": {
-                                                    "&& fieldset": {
-                                                        border: "0px solid transparent",
-                                                        padding: '0px 5px',
-                                                    }
-                                                },
-                                            }}
+                                            //     background: 'transparent',
+                                            //     border: '0px solid transparent !important',
+                                            //     borderRadius: '10px !important',
+                                            //     color: '#fff !important',
+                                            //     fontSize: "20px !important",
+                                            //     fontWeight: '500 !important',
+                                            //     padding: '0px 5px',
+                                            //     fontFamily: 'poppins',
+                                            //     "&:hover": {
+                                            //         "&& fieldset": {
+                                            //             border: "0px solid transparent",
+                                            //             padding: '0px 5px',
+                                            //         }
+                                            //     },
+                                            // }}
                                             MenuProps={{ classes: { paper: classes.select }, }}
                                         >
 
@@ -437,32 +439,32 @@ const SettingScreen = () => {
                                 </Box>
                                 <Box sx={{ display: 'flex', justifyContent: 'space-between', marginBottom: '18px', alignItems: 'center' }}>
                                     <Typography sx={{ fontSize: '20px', color: '#fff' }}>Who can see your follower list? :</Typography>
-                                    <FormControl variant="standard" fullWidth sx={{ width: '136px' }}>
+                                    <FormControl variant="standard" fullWidth sx={{ width: '136px',borderBottom:"1px solid #FF1C51 !important" }}>
                                         <Select
                                             sx={{ fontFamily: 'poppins', fontSize: '20px' }}
                                             inputProps={{ classes: { icon: classes.icon } }}
                                             labelId="demo-simple-select-standard-label"
                                             id="demo-simple-select-standard"
                                             value={followerListvalue}
-                                            onChange={handleChange}
-                                            className='steper-select'
-                                            sx={{
+                                            onChange={handleFollowerListChange}
+                                            className={`${classes.steperSelect} ${classes.slect}`}
+                                            // sx={{
 
-                                                background: 'transparent',
-                                                border: '0px solid transparent !important',
-                                                borderRadius: '10px !important',
-                                                color: '#fff !important',
-                                                fontSize: "20px !important",
-                                                fontWeight: '500 !important',
-                                                padding: '0px 5px',
-                                                fontFamily: 'poppins',
-                                                "&:hover": {
-                                                    "&& fieldset": {
-                                                        border: "0px solid transparent",
-                                                        padding: '0px 5px',
-                                                    }
-                                                },
-                                            }}
+                                            //     background: 'transparent',
+                                            //     border: '0px solid transparent !important',
+                                            //     borderRadius: '10px !important',
+                                            //     color: '#fff !important',
+                                            //     fontSize: "20px !important",
+                                            //     fontWeight: '500 !important',
+                                            //     padding: '0px 5px',
+                                            //     fontFamily: 'poppins',
+                                            //     "&:hover": {
+                                            //         "&& fieldset": {
+                                            //             border: "0px solid transparent",
+                                            //             padding: '0px 5px',
+                                            //         }
+                                            //     },
+                                            // }}
                                             MenuProps={{ classes: { paper: classes.select }, }}
                                         >
 
@@ -476,32 +478,32 @@ const SettingScreen = () => {
                                 </Box>
                                 <Box sx={{ display: 'flex', justifyContent: 'space-between', marginBottom: '18px', alignItems: 'center' }}>
                                     <Typography sx={{ fontSize: '20px', color: '#fff' }}>Who can see your contact info? :</Typography>
-                                    <FormControl variant="standard" fullWidth sx={{ width: '136px' }}>
+                                    <FormControl variant="standard" fullWidth sx={{ width: '136px',borderBottom:"2px solid #FF1C51 !important" }}>
                                         <Select
-                                            sx={{ fontFamily: 'poppins', fontSize: '20px' }}
+                                            // sx={{ fontFamily: 'poppins', fontSize: '20px' }}
                                             inputProps={{ classes: { icon: classes.icon } }}
                                             labelId="demo-simple-select-standard-label"
                                             id="demo-simple-select-standard"
                                             value={contactInfoValue}
-                                            onChange={handleChange}
-                                            className='steper-select'
-                                            sx={{
+                                            onChange={handleContactInfoChange}
+                                            className={`${classes.steperSelect} ${classes.slect}`}
+                                            // sx={{
 
-                                                background: 'transparent',
-                                                border: '0px solid transparent !important',
-                                                borderRadius: '10px !important',
-                                                color: '#fff !important',
-                                                fontSize: "20px !important",
-                                                fontWeight: '500 !important',
-                                                padding: '0px 5px',
-                                                fontFamily: 'poppins',
-                                                "&:hover": {
-                                                    "&& fieldset": {
-                                                        border: "0px solid transparent",
-                                                        padding: '0px 5px',
-                                                    }
-                                                },
-                                            }}
+                                            //     background: 'transparent',
+                                            //     border: '0px solid transparent !important',
+                                            //     borderRadius: '10px !important',
+                                            //     color: '#fff !important',
+                                            //     fontSize: "20px !important",
+                                            //     fontWeight: '500 !important',
+                                            //     padding: '0px 5px',
+                                            //     fontFamily: 'poppins',
+                                            //     "&:hover": {
+                                            //         "&& fieldset": {
+                                            //             border: "0px solid transparent",
+                                            //             padding: '0px 5px',
+                                            //         }
+                                            //     },
+                                            // }}
                                             MenuProps={{ classes: { paper: classes.select }, }}
                                         >
 

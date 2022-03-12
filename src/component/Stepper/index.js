@@ -3,7 +3,7 @@ import { Stepper, Step, StepLabel, Box, Typography, Button, FormControl, Grid, M
 import './steper.css';
 import { useStyles } from '../../constant/customStyle'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
-import { categoryData } from '../../constant/dropdown/category'
+import { categoryData,mediaData } from '../../constant/dropdown/category'
 import { BootstrapInput } from '../../component/Textfield/Bootstrap'
 import moment from 'moment'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
@@ -45,7 +45,7 @@ const buttonStep = [
 
 const CustomStepper = () => {
     const classes = useStyles()
-
+    const [value, setValue] = useState("choose")
     const [activeStep, setActiveStep] = useState(0);
     const [skipped, setSkipped] = useState(new Set());
     const [selectItem, setSelectedItem] = useState(1)
@@ -115,8 +115,9 @@ const CustomStepper = () => {
         setActiveStep(0);
     };
 
-    const handleChange = () => {
-
+    const handleChange = (event) => {
+        setValue(event.target.value)
+    
     }
 
     const SelectedItem = (id) => {
@@ -157,35 +158,35 @@ const CustomStepper = () => {
                         <Box>
                             <Grid container spacing={2} className={classes.gridStepersSpacing}>
                                 <Grid item xs={12} sm={12} lg={6} md={6}>
-                                    <FormControl variant="standard" fullWidth>
+                                    <FormControl variant="standard" fullWidth sx={{borderBottom:"1px solid red"}}>
                                         <Select
-                                            sx={{ fontFamily: 'poppins', fontSize: '20px' }}
+                                        
                                             inputProps={{ classes: { icon: classes.icon } }}
                                             labelId="demo-simple-select-standard-label"
                                             id="demo-simple-select-standard"
-                                            value={10}
+                                            value={value}
                                             onChange={handleChange}
-                                            className='steper-select'
-                                            sx={{
-                                                background: 'transparent',
-                                                border: '0px solid transparent !important',
-                                                borderRadius: '10px !important',
-                                                color: '#fff !important',
-                                                fontSize: "20px !important",
-                                                fontWeight: '500 !important',
-                                                padding: '0px 5px',
-                                                fontFamily: 'poppins',
-                                                "&:hover": {
-                                                    "&& fieldset": {
-                                                        border: "0px solid transparent",
-                                                        padding: '0px 5px',
-                                                    }
-                                                },
-                                            }}
+                                            className={`${classes.steperSelect} ${classes.slect}`}
+                                            // sx={{
+                                            //     background: 'transparent',
+                                            //     border: '0px solid transparent !important',
+                                            //     borderRadius: '10px !important',
+                                            //     color: '#fff !important',
+                                            //     fontSize: "20px !important",
+                                            //     fontWeight: '500 !important',
+                                            //     padding: '0px 5px',
+                                            //     fontFamily: 'poppins',
+                                            //     "&:hover": {
+                                            //         "&& fieldset": {
+                                            //             border: "0px solid transparent",
+                                            //             padding: '0px 5px',
+                                            //         }
+                                            //     },
+                                            // }}
                                             MenuProps={{ classes: { paper: classes.select }, }}
                                         >
-                                            <MenuItem value={10}>Choose Media Type</MenuItem>
-                                            {categoryData.map((data, index) => {
+                                            <MenuItem value={"choose"} disabled >Choose Media</MenuItem>
+                                            {mediaData.map((data, index) => {
                                                 return (
                                                     <MenuItem value={data.value} key={index++}>{data.name}</MenuItem>
                                                 )

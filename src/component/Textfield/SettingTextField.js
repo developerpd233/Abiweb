@@ -14,7 +14,7 @@ export const SettingsInput = styled(InputBase)(({ theme }) => ({
         right: "55px",
         left:"-1px !important",
         // backgroundColor: '#676767',
-        borderBottom: '1px solid #000',
+        borderBottom: '1px  solid #ff1c51 ',
         fontSize: '14px !important',
         // width: '100%',
         padding: '18px 10px',

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Box, Container, Grid, Typography, FormControl, MenuItem, Divider, Dialog, DialogContent, IconButton, Slider } from '@mui/material'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
-import { mediaData,sortingData } from '../../constant/dropdown/category'
+import { mediaData,sortingData,categoryData } from '../../constant/dropdown/category'
 import { useStyles } from '../../constant/customStyle'
 import Carousel, { consts } from 'react-elastic-carousel'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft'
@@ -58,8 +58,8 @@ const ExplorerScreen = () => {
     const breakPoints1 = [
         { width: 1, itemsToShow: 1 },
         { width: 550, itemsToShow: 2, itemsToScroll: 1 },
-        { width: 768, itemsToShow: 4 },
-        { width: 1200, itemsToShow: 4 }
+        { width: 768, itemsToShow: 5 },
+        { width: 1200, itemsToShow: 5 }
     ]
 
     const handleModalOpen = () => {
@@ -98,63 +98,80 @@ const ExplorerScreen = () => {
             <Container maxWidth="lg" className={classes.exploreContainer} sx={{ marginBottom: '150px' }} >
             <Grid container spacing={2} className={classes.exploreSpaceSelect}>
                         <Grid item xs={12} sm={12} lg={10} md={10}>
-                            <FormControl variant="standard" fullWidth >
-                                <Select
-                                    sx={{ fontFamily: 'inter', fontSize: '20px' }}
-                                    inputProps={{ classes: { icon: classes.icon } }}
-                                    labelId="demo-simple-select-standard-label"
-                                    id="demo-simple-select-standard"
-                                    value={value}
-                                    onChange={handleChange}
-                                    className={classes.Select}
-                                  
-                                    MenuProps={{ classes: { paper: classes.select }, }}
-                                >
-                                    <MenuItem value={"choose"} disabled>Choose Media Type</MenuItem>
-                                    {mediaData.map((data, index) => {
-                                        return (
-                                            <MenuItem value={data.value} key={index++}>{data.name}</MenuItem>
-                                        )
-                                    })}
-                                </Select>
-                            </FormControl>
+                        <FormControl variant="standard" fullWidth sx={{borderBottom:"1px solid #FF1C51 !important"}}>
+                                        <Select
+                                          
+                                            inputProps={{ classes: { icon: classes.icon } }}
+                                            labelId="demo-simple-select-standard-label"
+                                            id="demo-simple-select-standard"
+                                           value={value}
+                                            onChange={handleChange}
+                                            // className='steper-select'
+                                            className={`${classes.steperSelect} ${classes.slect}`}
+                                           
+                                            // sx={{
+                                            //     background: 'transparent',
+                                            //     border: '0px solid transparent !important',
+                                            //     borderRadius: '10px !important',
+                                            //     color: '#fff !important',
+                                            //     fontSize: "20px !important",
+                                            //     fontWeight: '500 !important',
+                                            //     padding: '0px 5px',
+                                            //     fontFamily: 'poppins',
+                                            //     "&:hover": {
+                                            //         "&& fieldset": {
+                                            //             border: "0px solid transparent",
+                                            //             padding: '0px 5px',
+                                            //         }
+                                            //     },
+                                            // }}
+                                            MenuProps={{ classes: { paper: classes.select }, }}
+                                        >
+                                            <MenuItem value={"choose"} disabled>Choose Media</MenuItem>
+                                            {mediaData.map((data, index) => {
+                                                return (
+                                                    <MenuItem value={data.value} key={index++}>{data.name}</MenuItem>
+                                                )
+                                            })}
+                                        </Select>
+                                    </FormControl>
                         </Grid>
                         <Grid item xs={12} sm={12} lg={2} md={2}>
-                            <FormControl variant="standard" fullWidth>
-                                <Select
-                                    sx={{ fontFamily: 'inter', fontSize: '20px' }}
-                                    inputProps={{ classes: { icon: classes.icon } }}
-                                    labelId="demo-simple-select-standard-label"
-                                    id="demo-simple-select-standard"
-                                    value={sortValue}
-                                    onChange={handleSortChange}
-                                    className='steper-select'
-                                    sx={{
-                                        background: 'transparent',
-                                        border: '0px solid transparent !important',
-                                        borderRadius: '10px !important',
-                                        color: '#fff !important',
-                                        fontSize: "20px !important",
-                                        fontWeight: '500 !important',
-                                        padding: '0px 5px',
-                                        fontFamily: 'inter',
-                                        "&:hover": {
-                                            "&& fieldset": {
-                                                border: "0px solid transparent",
-                                                padding: '0px 5px',
-                                            }
-                                        },
-                                    }}
-                                    MenuProps={{ classes: { paper: classes.select }, }}
-                                >
-                                    <MenuItem value={"sort"} disabled>Sort by:</MenuItem>
-                                    {sortingData.map((data, index) => {
-                                        return (
-                                            <MenuItem value={data.value} key={index++}>{data.name}</MenuItem>
-                                        )
-                                    })}
-                                </Select>
-                            </FormControl>
+                        <FormControl variant="standard" fullWidth sx={{borderBottom:"2px solid #FF1C51 !important"}}>
+                                        <Select
+                                          
+                                            inputProps={{ classes: { icon: classes.icon } }}
+                                            labelId="demo-simple-select-standard-label"
+                                            id="demo-simple-select-standard"
+                                            value={sortValue}
+                                            onChange={handleSortChange}
+                                            className={`${classes.steperSelect} ${classes.slect}`}
+                                            // sx={{
+                                            //     background: 'transparent',
+                                            //     border: '0px solid transparent !important',
+                                            //     borderRadius: '10px !important',
+                                            //     color: '#fff !important',
+                                            //     fontSize: "20px !important",
+                                            //     fontWeight: '500 !important',
+                                            //     padding: '0px 5px',
+                                            //     fontFamily: 'poppins',
+                                            //     "&:hover": {
+                                            //         "&& fieldset": {
+                                            //             border: "0px solid transparent",
+                                            //             padding: '0px 5px',
+                                            //         }
+                                            //     },
+                                            // }}
+                                            MenuProps={{ classes: { paper: classes.select }, }}
+                                        >
+                                            <MenuItem value={"sort"} disabled >Sort By</MenuItem>
+                                            {sortingData.map((data, index) => {
+                                                return (
+                                                    <MenuItem value={data.value} key={index++}>{data.name}</MenuItem>
+                                                )
+                                            })}
+                                        </Select>
+                                    </FormControl>
                         </Grid>
                     </Grid>
                 <Box className={classes.exploreBox}>
@@ -168,7 +185,7 @@ const ExplorerScreen = () => {
                                     id="demo-simple-select-standard"
                                     value={value}
                                     onChange={handleChange}
-                                    className='steper-select'
+                                    className='steperSelect'
                                     sx={{
                                         background: 'transparent',
                                         border: '0px solid transparent !important',
@@ -246,7 +263,7 @@ const ExplorerScreen = () => {
                             onResize={currentBreakPoint => console.log(currentBreakPoint)} enableMouseSwipe={false} pagination={false}>
                             {Array.from({ length: 41 }).map((item, index) => (
                                 <Box sx={{
-                                    backgroundColor: 'rgba(255,255,255,0.16)', padding: '30px 35px', borderRadius: '15px', cursor: 'pointer', '&:hover': {
+                                    backgroundColor: 'rgba(255,255,255,0.16)', padding: '30px 35px', borderRadius: '19px', cursor: 'pointer', '&:hover': {
                                         backgroundColor: 'rgba(25,25,25,0.35)'
                                     }
                                 }} onClick={handleModalOpen}>
@@ -274,72 +291,21 @@ const ExplorerScreen = () => {
                     </Grid>
 
                     <Box className={classes.explorerBottom}>
-                        <Carousel enableMouseSwipe={false} itemsToScroll={1} enableAutoPlay={false} renderArrow={myArrow} breakPoints={breakPoints1} itemPadding={[0, 0]} outerSpacing={-5}
+                    <Carousel enableMouseSwipe={false} itemsToScroll={1} enableAutoPlay={false} renderArrow={myArrow} breakPoints={breakPoints1} itemPadding={[0, 20]} outerSpacing={-5}
                             onResize={currentBreakPoint => console.log(currentBreakPoint)} pagination={false}>
+                           
+                           
+                           
                             {Array.from({ length: 41 }).map((item, index) => (
                                 <Box display={'flex'} justifyContent={'flex-start'} alignItems={'center'} flexDirection={'column'} sx={{
-                                    backgroundColor: 'rgba(255,255,255,0.18)', borderRadius: 3, padding: '15px', cursor: 'pointer', '&:hover': {
+                                    backgroundColor: 'rgba(255,255,255,0.18)', borderRadius: "19px", padding: '4px', cursor: 'pointer', '&:hover': {
                                         backgroundColor: 'rgba(25,25,25,0.35)'
                                     }
                                 }} onClick={handleModalOpen}>
-                                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', marginBottom: '15px', columnGap: '10px' }}>
+                                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%',marginBottom: '-2px', columnGap: '7px',marginLeft:"13px" }}>
 
                                         {Array.from({ length: 4 }).map((item, index) => (
-                                            <Box sx={{ width: '30px' }}>
-                                                <img src={profile} style={{ width: '100%' }} />
-                                            </Box>
-                                        ))}
-
-                                        <Box>
-                                            <IconButton aria-label="settings" sx={{ paddingRight: 0 }}>
-                                                <MoreVertIcon sx={{
-                                                    color: "#F0F3F6 !important",
-                                                    fontSize: "30px !important"
-                                                }} />
-                                            </IconButton>
-                                        </Box>
-                                    </Box>
-                                    <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} className={classes.img} sx={{ position: 'relative' }}>
-                                        <img src={Group} alt='' className={classes.img} />
-                                        <Box sx={{ position: 'absolute', bottom: '8px', left: '16px' }}>
-                                            <Typography sx={{ color: '#fff', fontSize: '13px', fontFamily: 'inter', fontWeight: '500' }}>Abstract smoke Red blue</Typography>
-                                        </Box>
-                                    </Box>
-                                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', columnGap: '100px' }}>
-                                        <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
-                                            <Typography sx={{ fontWeight: '900', color: '#fff' }}>$ 2.05</Typography>
-                                        </Box>
-                                        <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
-                                            <IconButton aria-label="settings">
-                                                <FavoriteIcon sx={{ color: '#fff' }} />
-                                            </IconButton>
-                                            <Typography sx={{ fontWeight: '900', color: '#fff' }}>22</Typography>
-                                        </Box>
-                                    </Box>
-                                </Box>
-                            ))}
-                        </Carousel>
-                    </Box>
-                    <Grid container spacing={2} className={classes.explorerHeadingSection}>
-                        <Grid item xs={12} sm={12} lg={6} md={6}>
-                            <Typography className={classes.explorerHeading}>Trending</Typography>
-                            <Divider sx={{ background: '#FF1C51', height: 2, borderRadius: 20 }} />
-                        </Grid>
-                    </Grid>
-
-                    <Box className={classes.explorerBottom}>
-                        <Carousel enableMouseSwipe={false} itemsToScroll={1} enableAutoPlay={false} renderArrow={myArrow} breakPoints={breakPoints1} itemPadding={[0, 0]} outerSpacing={-5}
-                            onResize={currentBreakPoint => console.log(currentBreakPoint)} pagination={false}>
-                            {Array.from({ length: 41 }).map((item, index) => (
-                                <Box display={'flex'} justifyContent={'flex-start'} alignItems={'center'} flexDirection={'column'} sx={{
-                                    backgroundColor: 'rgba(255,255,255,0.18)', borderRadius: 3, padding: '15px', cursor: 'pointer', '&:hover': {
-                                        backgroundColor: 'rgba(25,25,25,0.35)'
-                                    }
-                                }} onClick={handleModalOpen}>
-                                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', marginBottom: '0px', columnGap: '10px' }}>
-
-                                        {Array.from({ length: 4 }).map((item, index) => (
-                                            <Box sx={{ width: '30px' }}>
+                                            <Box sx={{ width: '20px' }}>
                                                 <img src={profile} style={{ width: '100%' }} />
                                             </Box>
                                         ))}
@@ -356,10 +322,112 @@ const ExplorerScreen = () => {
                                     <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} className={classes.img} sx={{ position: 'relative' }}>
                                         <img src={Group} alt='' className={classes.imgex} />
                                         <Box sx={{ position: 'absolute', bottom: '8px', left: '16px' }}>
-                                            <Typography sx={{ color: '#fff', fontSize: '13px', fontFamily: 'inter', fontWeight: '500' }}>Abstract smoke Red blue</Typography>
+                                            <Typography sx={{ color: '#fff', fontSize: '10px', fontFamily: 'inter', fontWeight: '500' }}>Abstract smoke Red blue</Typography>
                                         </Box>
                                     </Box>
-                                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', columnGap: '100px' }}>
+                                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', columnGap: '35px' }}>
+                                        <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
+                                            <Typography sx={{ fontWeight: '900', color: '#fff' }}>$ 2.05</Typography>
+                                        </Box>
+                                        <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
+                                            <IconButton aria-label="settings">
+                                                <FavoriteIcon sx={{ color: '#fff' }} />
+                                            </IconButton>
+                                            <Typography sx={{ fontWeight: '900', color: '#fff' }}>22</Typography>
+                                        </Box>
+                                    </Box>
+                                </Box>
+                            ))}
+                        </Carousel>
+                        {/* <Carousel enableMouseSwipe={false} itemsToScroll={1} enableAutoPlay={false} renderArrow={myArrow} breakPoints={breakPoints1} itemPadding={[0, 0]} outerSpacing={-5}
+                            onResize={currentBreakPoint => console.log(currentBreakPoint)} pagination={false}>
+                            {Array.from({ length: 41 }).map((item, index) => (
+                                <Box display={'flex'} justifyContent={'flex-start'} alignItems={'center'} flexDirection={'column'} sx={{
+                                    backgroundColor: 'rgba(255,255,255,0.18)', borderRadius: "19px", padding: '4px', cursor: 'pointer', '&:hover': {
+                                        backgroundColor: 'rgba(25,25,25,0.35)'
+                                    }
+                                }} onClick={handleModalOpen}>
+                                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', marginBottom: '-2px', columnGap: '7px',marginLeft:"13px" }}>
+
+                                        {Array.from({ length: 4 }).map((item, index) => (
+                                            <Box sx={{ width: '20px' }}>
+                                                <img src={profile} style={{ width: '100%' }} />
+                                            </Box>
+                                        ))}
+
+                                        <Box>
+                                            <IconButton aria-label="settings" sx={{ paddingRight: 0 }}>
+                                                <MoreVertIcon sx={{
+                                                    color: "#F0F3F6 !important",
+                                                    fontSize: "30px !important"
+                                                }} />
+                                            </IconButton>
+                                        </Box>
+                                    </Box>
+                                    <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} className={classes.img} sx={{ position: 'relative' }}>
+                                        <img src={Group} alt='' className={classes.imgex} />
+                                        <Box sx={{ position: 'absolute', bottom: '8px', left: '16px' }}>
+                                            <Typography sx={{ color: '#fff', fontSize: '10px', fontFamily: 'inter', fontWeight: '500',margin: "0 0 0 0px" }}>Abstract smoke Red blue</Typography>
+                                        </Box>
+                                    </Box>
+                                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', columnGap: '35px' }}>
+                                        <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
+                                            <Typography sx={{ fontWeight: '900', color: '#fff' }}>$ 2.05</Typography>
+                                        </Box>
+                                        <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
+                                            <IconButton aria-label="settings">
+                                                <FavoriteIcon sx={{ color: '#fff' }} />
+                                            </IconButton>
+                                            <Typography sx={{ fontWeight: '900', color: '#fff' }}>22</Typography>
+                                        </Box>
+                                    </Box>
+                                </Box>
+                            ))}
+                        </Carousel> */}
+                    </Box>
+                    <Grid container spacing={2} className={classes.explorerHeadingSection}>
+                        <Grid item xs={12} sm={12} lg={6} md={6}>
+                            <Typography className={classes.explorerHeading}>Trending</Typography>
+                            <Divider sx={{ background: '#FF1C51', height: 2, borderRadius: "19px" }} />
+                        </Grid>
+                    </Grid>
+
+                    <Box className={classes.explorerBottom}>
+                        <Carousel enableMouseSwipe={false} itemsToScroll={1} enableAutoPlay={false} renderArrow={myArrow} breakPoints={breakPoints1} itemPadding={[0, 20]} outerSpacing={-5}
+                            onResize={currentBreakPoint => console.log(currentBreakPoint)} pagination={false}>
+                           
+                           
+                           
+                            {Array.from({ length: 41 }).map((item, index) => (
+                                <Box display={'flex'} justifyContent={'flex-start'} alignItems={'center'} flexDirection={'column'} sx={{
+                                    backgroundColor: 'rgba(255,255,255,0.18)', borderRadius: "19px", padding: '4px', cursor: 'pointer', '&:hover': {
+                                        backgroundColor: 'rgba(25,25,25,0.35)'
+                                    }
+                                }} onClick={handleModalOpen}>
+                                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%',marginBottom: '-2px', columnGap: '7px',marginLeft:"13px" }}>
+
+                                        {Array.from({ length: 4 }).map((item, index) => (
+                                            <Box sx={{ width: '20px' }}>
+                                                <img src={profile} style={{ width: '100%' }} />
+                                            </Box>
+                                        ))}
+
+                                        <Box>
+                                            <IconButton aria-label="settings" sx={{ paddingRight: 0 }}>
+                                                <MoreVertIcon sx={{
+                                                    color: "#F0F3F6 !important",
+                                                    fontSize: "30px !important"
+                                                }} />
+                                            </IconButton>
+                                        </Box>
+                                    </Box>
+                                    <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} className={classes.img} sx={{ position: 'relative' }}>
+                                        <img src={Group} alt='' className={classes.imgex} />
+                                        <Box sx={{ position: 'absolute', bottom: '8px', left: '16px' }}>
+                                            <Typography sx={{ color: '#fff', fontSize: '10px', fontFamily: 'inter', fontWeight: '500' }}>Abstract smoke Red blue</Typography>
+                                        </Box>
+                                    </Box>
+                                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', columnGap: '35px' }}>
                                         <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
                                             <Typography sx={{ fontWeight: '900', color: '#fff' }}>$ 2.05</Typography>
                                         </Box>
@@ -390,14 +458,14 @@ const ExplorerScreen = () => {
                             onResize={currentBreakPoint => console.log(currentBreakPoint)} pagination={false}>
                             {Array.from({ length: 41 }).map((item, index) => (
                                 <Box display={'flex'} justifyContent={'flex-start'} alignItems={'center'} flexDirection={'column'} sx={{
-                                    backgroundColor: 'rgba(255,255,255,0.18)', borderRadius: 3, padding: '15px', cursor: 'pointer', '&:hover': {
+                                    backgroundColor: 'rgba(255,255,255,0.18)', borderRadius: "19px", padding: '4px', cursor: 'pointer', '&:hover': {
                                         backgroundColor: 'rgba(25,25,25,0.35)'
                                     }
                                 }} onClick={handleModalOpen}>
-                                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', marginBottom: '15px', columnGap: '10px' }}>
+                                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%',marginBottom: '-2px', columnGap: '7px',marginLeft:"13px" }}>
 
                                         {Array.from({ length: 4 }).map((item, index) => (
-                                            <Box sx={{ width: '30px' }}>
+                                            <Box sx={{ width: '20px' }}>
                                                 <img src={profile} style={{ width: '100%' }} />
                                             </Box>
                                         ))}
@@ -412,12 +480,12 @@ const ExplorerScreen = () => {
                                         </Box>
                                     </Box>
                                     <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} className={classes.img} sx={{ position: 'relative' }}>
-                                        <img src={Group} alt='' className={classes.img} />
+                                        <img src={Group} alt='' className={classes.imgex} />
                                         <Box sx={{ position: 'absolute', bottom: '8px', left: '16px' }}>
-                                            <Typography sx={{ color: '#fff', fontSize: '13px', fontFamily: 'inter', fontWeight: '500' }}>Abstract smoke Red blue</Typography>
+                                            <Typography sx={{ color: '#fff', fontSize: '10px', fontFamily: 'inter', fontWeight: '500' }}>Abstract smoke Red blue</Typography>
                                         </Box>
                                     </Box>
-                                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', columnGap: '100px' }}>
+                                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', columnGap: '35px' }}>
                                         <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
                                             <Typography sx={{ fontWeight: '900', color: '#fff' }}>$ 2.05</Typography>
                                         </Box>

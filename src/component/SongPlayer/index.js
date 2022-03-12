@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Dialog, DialogContent, Button, Box, IconButton, Typography, Slider, FormControl, Grid, MenuItem, InputBase } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import { useStyles } from '../../constant/customStyle'
-import { mediaData,categoryData } from '../../constant/dropdown/category'
+import { mediaData,sortingData } from '../../constant/dropdown/category'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import libraryIcon from '../../assets/libraryIcon.svg'
@@ -61,6 +61,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 
 export default function SongPlayer({ blur }) {
     const classes = useStyles();
+    const [sortValue, setSortValue] = useState("sort")
     const [value, setValue] = React.useState("choose");
     const [open, setOpen] = useState(false)
     const [play, setPlay] = useState(false)
@@ -99,7 +100,9 @@ export default function SongPlayer({ blur }) {
     const handleForward = () => {
         console.log('forward')
     }
- 
+    const handleSortChange = (event) => {
+        setSortValue(event.target.value)
+    }
     return (
         <>
             <Grid container className={classes.mucicontainer}>
@@ -269,11 +272,12 @@ export default function SongPlayer({ blur }) {
             </Grid>
             </div>  */}
             <Dialog className='header-scroll' classes={{ paper: classes.paper }} open={open} onClose={handleClose} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description" fullWidth PaperProps={{ style: { borderRadius: 20, backgroundColor: '#1D1D1D', border: '2px solid #707070', maxWidth: 974 } }}>
+            <CloseIcon onClick={handleClose} sx={{cursor:"pointer", fontSize: '24px', fontWeight: '600', fontFamily: 'inter', color: '#fff',position:"absolute",right:"11px",top:"11px" }}/>
                 <DialogContent>
                     <Box sx={{ padding: '70px 55px' }}>
                         <Grid container spacing={2} sx={{ marginBottom: '43px' }}>
                             <Grid item xs={12} sm={12} lg={6} md={6}>
-                                <Box sx={{ width: '95%', borderBottom: '2px solid #FF1C51', marginTop: "-12px" }}>
+                                <Box sx={{ width: '95%', borderBottom: '2px solid #FF1C51', marginTop: "-3px" }}>
                                     <Search sx={{ backgroundColor: "transparent ", }}>
                                         <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                                             <SearchIconWrapper>
@@ -300,80 +304,78 @@ export default function SongPlayer({ blur }) {
                                 </Search>  */}
                             </Grid>
                             <Grid item xs={12} sm={12} lg={3} md={3}>
-                                <FormControl variant="standard" fullWidth sx={{ width: '150px' }}>
-                                    <Select
-                                        sx={{ fontFamily: 'poppins', fontSize: '20px' }}
-                                        inputProps={{ classes: { icon: classes.icon } }}
-                                        labelId="demo-simple-select-standard-label"
-                                        id="demo-simple-select-standard"
-                                        value={value}
-                                        onChange={handleChange}
-                                        className='steper-select'
-                                        sx={{
-
-                                            background: 'transparent',
-                                            border: '0px solid transparent !important',
-                                            borderRadius: '10px !important',
-                                            color: '#fff !important',
-                                            fontSize: "15px !important",
-                                            fontWeight: '500 !important',
-                                            padding: '0px 5px',
-                                            fontFamily: 'poppins',
-                                            "&:hover": {
-                                                "&& fieldset": {
-                                                    border: "0px solid transparent",
-                                                    padding: '0px 5px',
-                                                }
-                                            },
-                                        }}
-                                        MenuProps={{ classes: { paper: classes.select }, }}
-                                    >
-                                        <MenuItem value={"choose"}>Choose Media</MenuItem>
-                                        {mediaData.map((data, index) => {
-                                            return (
-                                                <MenuItem value={data.value} key={index++}>{data.name}</MenuItem>
-                                            )
-                                        })}
-                                    </Select>
-                                </FormControl>
+                            <FormControl variant="standard" fullWidth sx={{borderBottom:"2gitpx solid #FF1C51 !important",margin:"5px 0px 0px 0"}}>
+                                        <Select
+                                          
+                                            inputProps={{ classes: { icon: classes.icon } }}
+                                            labelId="demo-simple-select-standard-label"
+                                            id="demo-simple-select-standard"
+                                            value={value}
+                                            onChange={handleChange}
+                                            className={`${classes.steperSelect} ${classes.slect}`}
+                                            // sx={{
+                                            //     background: 'transparent',
+                                            //     border: '0px solid transparent !important',
+                                            //     borderRadius: '10px !important',
+                                            //     color: '#fff !important',
+                                            //     fontSize: "20px !important",
+                                            //     fontWeight: '500 !important',
+                                            //     padding: '0px 5px',
+                                            //     fontFamily: 'poppins',
+                                            //     "&:hover": {
+                                            //         "&& fieldset": {
+                                            //             border: "0px solid transparent",
+                                            //             padding: '0px 5px',
+                                            //         }
+                                            //     },
+                                            // }}
+                                            MenuProps={{ classes: { paper: classes.select }, }}
+                                        >
+                                            <MenuItem value={"choose"} disabled >Choose Media</MenuItem>
+                                            {mediaData.map((data, index) => {
+                                                return (
+                                                    <MenuItem value={data.value} key={index++}>{data.name}</MenuItem>
+                                                )
+                                            })}
+                                        </Select>
+                                    </FormControl>
                             </Grid>
                             <Grid item xs={12} sm={12} lg={3} md={3}>
-                                <FormControl variant="standard" fullWidth sx={{ width: '150px' }}>
-                                    <Select
-                                        sx={{ fontFamily: 'poppins', fontSize: '20px' }}
-                                        inputProps={{ classes: { icon: classes.icon } }}
-                                        labelId="demo-simple-select-standard-label"
-                                        id="demo-simple-select-standard"
-                                        value={"category"}
-                                        // onChange={handleChange}
-                                        className='steper-select'
-                                        sx={{
-
-                                            background: 'transparent',
-                                            border: '0px solid transparent !important',
-                                            borderRadius: '10px !important',
-                                            color: '#fff !important',
-                                            fontSize: "15px !important",
-                                            fontWeight: '500 !important',
-                                            padding: '0px 5px',
-                                            fontFamily: 'poppins',
-                                            "&:hover": {
-                                                "&& fieldset": {
-                                                    border: "0px solid transparent",
-                                                    padding: '0px 5px',
-                                                }
-                                            },
-                                        }}
-                                        MenuProps={{ classes: { paper: classes.select }, }}
-                                    > <MenuItem value={"category"}>Category</MenuItem>
-
-                                     {categoryData.map((data, index) => {
-                                return (
-                                    <MenuItem value={data.value} key={index++}>{data.name}</MenuItem>
-                                )
-                            })}
-                                    </Select>
-                                </FormControl>
+                            <FormControl variant="standard" fullWidth sx={{borderBottom:"2px solid #FF1C51 !important",margin:"5px 0px 0px 0"}}>
+                                        <Select
+                                          
+                                            inputProps={{ classes: { icon: classes.icon } }}
+                                            labelId="demo-simple-select-standard-label"
+                                            id="demo-simple-select-standard"
+                                            value={sortValue}
+                                            onChange={handleSortChange}
+                                            className={`${classes.steperSelect} ${classes.slect}`}
+                                            // sx={{
+                                            //     background: 'transparent',
+                                            //     border: '0px solid transparent !important',
+                                            //     borderRadius: '10px !important',
+                                            //     color: '#fff !important',
+                                            //     fontSize: "20px !important",
+                                            //     fontWeight: '500 !important',
+                                            //     padding: '0px 5px',
+                                            //     fontFamily: 'poppins',
+                                            //     "&:hover": {
+                                            //         "&& fieldset": {
+                                            //             border: "0px solid transparent",
+                                            //             padding: '0px 5px',
+                                            //         }
+                                            //     },
+                                            // }}
+                                            MenuProps={{ classes: { paper: classes.select }, }}
+                                        >
+                                            <MenuItem value={"sort"}>Sort by</MenuItem>
+                                            {sortingData.map((data, index) => {
+                                                return (
+                                                    <MenuItem value={data.value} key={index++}>{data.name}</MenuItem>
+                                                )
+                                            })}
+                                        </Select>
+                                    </FormControl>
                             </Grid>
                         </Grid>
                         <Grid container spacing={6} sx={{ marginBottom: '43px' }}>
