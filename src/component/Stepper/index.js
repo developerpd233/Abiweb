@@ -218,7 +218,7 @@ const CustomStepper = () => {
                                 {selectItem === 1 ?
                                     <Grid container spacing={2} sx={{ padding: '0px 40px', marginBottom: '70px' }}>
                                         <Grid item xs={12} sm={12} lg={5} md={5}>
-                                            <FormControl variant="standard" fullWidth className='steper-label'>
+                                            <FormControl variant="standard" fullWidth className='steper-label'  >
                                                 <InputLabel shrink htmlFor="bootstrap-input">
                                                     Instant Price
                                                 </InputLabel>

@@ -11,7 +11,7 @@ export const BootstrapInput = styled(InputBase)(({ theme }) => ({
         color: '#fff',
         position: 'relative',
         backgroundColor: 'transparent',
-        borderBottom: '1px solid #ced4da',
+        borderBottom: '1px solid #FF1C51',
         fontSize: '14px !important',
         // width: 'auto',
         padding: '10px 0px',
@@ -25,7 +25,7 @@ export const BootstrapInput = styled(InputBase)(({ theme }) => ({
         '&:focus': {
             boxShadow: `none`,
             borderColor: 'transparent',
-            borderBottom: '1px solid #ced4da',
+            borderBottom: '1px solid #FF1C51',
 
         },
     },
