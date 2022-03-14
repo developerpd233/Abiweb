@@ -109,13 +109,13 @@ function ProfileScreen() {
               <Box className={classes.topBannerButton}>
                 <Button variant="contained" className={classes.topButtonSection}>Backstage Pass</Button>
                 <Box className={classes.iconButton1}>
-                  <GrFacebookOption className={classes.socialIcons} />
+                  <GrFacebookOption className={classes.socialIcons} href="#" />
                 </Box>
                 <Box className={classes.iconButton1}>
-                  <GrInstagram className={classes.socialIcons} />
+                  <GrInstagram href="#" className={classes.socialIcons} />
                 </Box>
                 <Box className={classes.iconButton1}>
-                  <GrTwitter className={classes.socialIcons} />
+                  <GrTwitter href="#" className={classes.socialIcons} />
                 </Box>
                 <Link to="/settings">
                   <Box className={classes.iconButton1} >

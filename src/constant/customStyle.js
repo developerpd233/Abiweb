@@ -1175,6 +1175,7 @@ export const useStyles = makeStyles({
         borderRadius: "25px !important",
         marginBottom: "13px !important",
         top: "-13px",
+        transition:"ease 1s !important"
     },
     expand2: {
         color: "red !important",
@@ -1187,6 +1188,7 @@ export const useStyles = makeStyles({
         borderRadius: "25px !important",
         marginBottom: "13px !important",
         top: "-13px",
+        transition:"ease 1s !important"
     },
     sli: {
         width: "100% !important"

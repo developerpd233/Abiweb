@@ -98,8 +98,8 @@ const Header = ({ blur }) => {
     const breakPoints = [
         { width: 1, itemsToShow: 1 },
         { width: 550, itemsToShow: 2, itemsToScroll: 1 },
-        { width: 768, itemsToShow: 4 },
-        { width: 1200, itemsToShow: 4 }
+        { width: 768, itemsToShow: 5 },
+        { width: 1200, itemsToShow: 5 }
     ];
 
     const toggleDrawer = (anchor, open) => (event) => {
@@ -305,38 +305,40 @@ const Header = ({ blur }) => {
             </Drawer>
 
             <Dialog className='header-scroll' classes={{ paper: classes.paper }} open={open} maxWidth={'lg'} onClose={handleClose} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description" fullWidth PaperProps={{ style: { borderRadius: 20, backgroundColor: '#1D1D1D', border: '2px solid #707070' } }}>
+            <CloseIcon onClick={handleClose} sx={{ cursor: "pointer", fontSize: '24px', fontWeight: '600', fontFamily: 'inter', color: '#fff', position: "absolute", right: "11px", top: "11px" }} />
                 <DialogContent>
                     <Grid container spacing={2} sx={{ padding: '0px 40px', marginBottom: 5 }}>
                         <Grid item xs={12} sm={12} lg={6} md={6}>
                             
-                            <FormControl variant="standard" fullWidth>
+                            <FormControl variant="standard" fullWidth sx={{borderBottom:"2px solid #FF1C51 !important"}}>
                                 <Select
-                                    sx={{ fontFamily: 'poppins', fontSize: '20px' }}
+                                  className={`${classes.steperSelect} ${classes.slect}`}
+                                  
                                     inputProps={{ classes: { icon: classes.icon } }}
                                     labelId="demo-simple-select-standard-label"
                                     id="demo-simple-select-standard"
                                     value={value}
                                     onChange={handleChange}
-                                    className='steper-select'
-                                    sx={{
-                                        background: 'transparent',
-                                        border: '0px solid transparent !important',
-                                        borderRadius: '10px !important',
-                                        color: '#fff !important',
-                                        fontSize: "20px !important",
-                                        fontWeight: '500 !important',
-                                        padding: '0px 5px',
-                                        fontFamily: 'poppins',
-                                        "&:hover": {
-                                            "&& fieldset": {
-                                                border: "0px solid transparent",
-                                                padding: '0px 5px',
-                                            }
-                                        },
-                                    }}
+                                  
+                                    // sx={{
+                                    //     background: 'transparent',
+                                    //     border: '0px solid transparent !important',
+                                    //     borderRadius: '10px !important',
+                                    //     color: '#fff !important',
+                                    //     fontSize: "20px !important",
+                                    //     fontWeight: '500 !important',
+                                    //     padding: '0px 5px',
+                                    //     fontFamily: 'poppins',
+                                    //     "&:hover": {
+                                    //         "&& fieldset": {
+                                    //             border: "0px solid transparent",
+                                    //             padding: '0px 5px',
+                                    //         }
+                                    //     },
+                                    // }}
                                     MenuProps={{ classes: { paper: classes.select }, }}
                                 >
-                                  <MenuItem value={"choose"}>Choose Media Type</MenuItem>
+                                  <MenuItem value={"choose"}>Choose Media </MenuItem>
                                     {mediaData.map((data, index) => {
                                         return (
                                             <MenuItem value={data.value} key={index++}>{data.name}</MenuItem>
@@ -353,7 +355,7 @@ const Header = ({ blur }) => {
                         </Grid>
                     </Grid>
                     <Grid container spacing={2} sx={{ marginTop: 1, marginBottom: 5, padding: '0px 20px' }}>
-                        {Array.from({ length: 5 }).map((item, index) => (
+                        {Array.from({ length: 6 }).map((item, index) => (
                             <Grid item xs={4} sm={4} lg={2} md={2} sx={{ marginBottom: 1, }}>
                                 <CustomSubscriberCard name={'Black Glass'} image={profile} />
                             </Grid>

@@ -13,25 +13,32 @@ import Typography from '@mui/material/Typography';
 const CustomOnSaleCard = () => {
     const classes = useStyles();
     return (
-        <Box display={'flex'} justifyContent={'flex-start'} alignItems={'center'} flexDirection={'column'} sx={{ backgroundColor: '#707070', borderRadius: 3, padding: '15px' }}>
-            <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', marginBottom: '15px', columnGap: '10px', }}>
+        <Box display={'flex'} justifyContent={'flex-start'} alignItems={'center'} flexDirection={'column'} sx={{ backgroundColor: '#707070', borderRadius: "19px", padding: '4px', }}>
+            <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', marginBottom: '0px', columnGap: '7px', }}>
                 {Array.from({ length: 4 }).map((item, index) => (
-                    <img src={profile} width={'30px'} height={'30px'} className={classes.mediaimage} />
+                    <Box sx={{ width: '25px' }}>
+                        <img src={profile} style={{ width: '100%' }} />
+                    </Box>
                 ))}
                 <Box>
                     <IconButton aria-label="settings" sx={{ paddingRight: 0 }}>
-                        <MoreVertIcon className={classes.icon} />
+                        <MoreVertIcon sx={{
+                            color: "#F0F3F6 !important",
+                            fontSize: "30px !important"
+                        }} />
                     </IconButton>
                 </Box>
             </Box>
-            <Box sx={{ position: 'relative', width: '100%' }}>
-                <img src={Group} alt='' className={classes.img} />
-                <Box sx={{ position: 'absolute', bottom: '8px', left: '8px' }}>
-                    <Typography sx={{ color: '#fff', fontSize: '13px', fontFamily: 'poppins', fontWeight: '500' }}>Abstract smoke Red blue</Typography>
+            <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'} className={classes.img} sx={{ position: 'relative' }}>
+                <img src={Group} alt='' className={classes.imgex} />
+                <Box sx={{ position: 'absolute', bottom: '8px', left: '16px' }}>
+                    <Typography sx={{ color: '#fff', fontSize: '10px', fontFamily: 'inter', fontWeight: '500' }}>Abstract smoke Red blue</Typography>
                 </Box>
             </Box>
-            <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', columnGap: '100px' }}>
-                <Typography sx={{ fontWeight: '900', color: '#fff' }}>$ 2.05</Typography>
+            <Box display={'flex'} justifyContent={'center'} alignItems={'center'} sx={{ width: '100%', columnGap: '57px' }}>
+                <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
+                    <Typography sx={{ fontWeight: '900', color: '#fff' }}>$ 2.05</Typography>
+                </Box>
                 <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
                     <IconButton aria-label="settings">
                         <FavoriteIcon sx={{ color: '#fff' }} />

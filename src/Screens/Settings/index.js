@@ -360,7 +360,7 @@ const SettingScreen = () => {
                                 </Box>
                                 <Box sx={{ display: 'flex', justifyContent: 'space-between', marginBottom: '18px', alignItems: 'center' }}>
                                     <Typography sx={{ fontSize: '20px', color: '#fff' }}>Who can see your media? :</Typography>
-                                    <FormControl variant="standard" fullWidth sx={{ width: '136px',borderBottom:"1px solid #FF1C51 !important" }}>
+                                    <FormControl variant="standard" fullWidth sx={{ width: '136px',borderBottom:"2px solid #FF1C51 !important" }}>
                                         <Select
                                             // sx={{ fontFamily: 'poppins', fontSize: '20px' }}
                                             inputProps={{ classes: { icon: classes.icon } }}
@@ -400,7 +400,7 @@ const SettingScreen = () => {
                                 </Box>
                                 <Box sx={{ display: 'flex', justifyContent: 'space-between', marginBottom: '18px', alignItems: 'center' }}>
                                     <Typography sx={{ fontSize: '20px', color: '#fff' }}>Who can see your friends list? :</Typography>
-                                    <FormControl variant="standard" fullWidth sx={{ width: '136px',borderBottom:"1px solid #FF1C51 !important" }}>
+                                    <FormControl variant="standard" fullWidth sx={{ width: '136px',borderBottom:"2px solid #FF1C51 !important" }}>
                                         <Select
                                             // sx={{ fontFamily: 'poppins', fontSize: '20px' }}
                                             inputProps={{ classes: { icon: classes.icon } }}
@@ -439,7 +439,7 @@ const SettingScreen = () => {
                                 </Box>
                                 <Box sx={{ display: 'flex', justifyContent: 'space-between', marginBottom: '18px', alignItems: 'center' }}>
                                     <Typography sx={{ fontSize: '20px', color: '#fff' }}>Who can see your follower list? :</Typography>
-                                    <FormControl variant="standard" fullWidth sx={{ width: '136px',borderBottom:"1px solid #FF1C51 !important" }}>
+                                    <FormControl variant="standard" fullWidth sx={{ width: '136px',borderBottom:"2px solid #FF1C51 !important" }}>
                                         <Select
                                             sx={{ fontFamily: 'poppins', fontSize: '20px' }}
                                             inputProps={{ classes: { icon: classes.icon } }}
