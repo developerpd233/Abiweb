@@ -50,7 +50,7 @@ export const mediaData = [
         name: 'Course'
     },
     {
-        value: 6,
+        value: 7,
         name: 'Sheet Music'
     }
 
