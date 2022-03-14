@@ -98,7 +98,7 @@ const ExplorerScreen = () => {
             <Container maxWidth="lg" className={classes.exploreContainer} sx={{ marginBottom: '150px' }} >
             <Grid container spacing={2} className={classes.exploreSpaceSelect}>
                         <Grid item xs={12} sm={12} lg={10} md={10}>
-                        <FormControl variant="standard" fullWidth sx={{borderBottom:"1px solid #FF1C51 !important"}}>
+                        <FormControl variant="standard" fullWidth sx={{borderBottom:"2px solid #FF1C51 !important"}}>
                                         <Select
                                           
                                             inputProps={{ classes: { icon: classes.icon } }}

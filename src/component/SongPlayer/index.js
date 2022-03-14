@@ -305,7 +305,7 @@ export default function SongPlayer({ blur }) {
                                 </Search>  */}
                             </Grid>
                             <Grid item xs={12} sm={12} lg={3} md={3}>
-                                <FormControl variant="standard" fullWidth sx={{ borderBottom: "2gitpx solid #FF1C51 !important", margin: "5px 0px 0px 0" }}>
+                                <FormControl variant="standard" fullWidth sx={{ borderBottom: "2px solid #FF1C51 !important", margin: "5px 0px 0px 0" }}>
                                     <Select
 
                                         inputProps={{ classes: { icon: classes.icon } }}

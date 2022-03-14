@@ -158,7 +158,7 @@ const CustomStepper = () => {
                         <Box>
                             <Grid container spacing={2} className={classes.gridStepersSpacing}>
                                 <Grid item xs={12} sm={12} lg={6} md={6}>
-                                    <FormControl variant="standard" fullWidth sx={{borderBottom:"1px solid red"}}>
+                                    <FormControl variant="standard" fullWidth sx={{borderBottom:"2px solid #FF1C51"}}>
                                         <Select
                                         
                                             inputProps={{ classes: { icon: classes.icon } }}
