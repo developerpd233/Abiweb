@@ -1791,7 +1791,7 @@ export const useStyles = makeStyles({
         fontFamily: 'poppins !important',
         "&:hover": {
             "&& fieldset": {
-                border: "0px solid transparent",
+                border: "none !important",
                 padding: '0px 5px',
             }
         },
@@ -1801,6 +1801,8 @@ export const useStyles = makeStyles({
     "&:after":{
         display: "none !important",
       },
-      
+      "&:before":{
+        display: "none !important",
+      },
 }
 })
